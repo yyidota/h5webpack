@@ -1,6 +1,8 @@
 const { merge } = require('webpack-merge')
-
+const paths = require('./paths')
 const common = require('./webpack.common')
+
+common.entry['watch-html'] = paths.src + '/watch-html.js'
 
 module.exports = merge(common, {
   // Set the mode to development or production
@@ -33,6 +35,10 @@ module.exports = merge(common, {
           { loader: 'sass-loader', options: { sourceMap: true } },
         ],
       },
+      {
+        test: /\.html$/,
+        use: 'raw-loader'
+      }
     ],
   },
 })

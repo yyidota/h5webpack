@@ -14,6 +14,9 @@ logo.src = webpackLogo
 const heading = document.createElement('h1')
 heading.textContent = example()
 
+const h = document.createElement('h2')
+h.textContent = example()
+
 // Test a background image url in CSS
 const imageBackground = document.createElement('div')
 imageBackground.classList.add('image')
@@ -23,4 +26,4 @@ const imagePublic = document.createElement('img')
 imagePublic.src = '/assets/example.png'
 
 const app = document.querySelector('#root')
-app.append(logo, heading, imageBackground, imagePublic)
+app.append(h,logo, heading, imageBackground, imagePublic)
